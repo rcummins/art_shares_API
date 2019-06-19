@@ -7,4 +7,5 @@ class User < ApplicationRecord
         foreign_key: :viewer_id,
         dependent: :destroy
     has_many :viewed_artworks, through: :artwork_views, source: :artwork
+    has_many :comments, foreign_key: :author_id, dependent: :destroy
 end
